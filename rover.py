@@ -23,6 +23,8 @@ class Rover:
         self.labrador = k9.Labrador()
         self.__load_pwm_engine()
 
+        self.__bridge_h()
+
     def move_forward(self):
         ''' Move o rover para frente '''
         if not self.__is_moving:
@@ -79,3 +81,11 @@ class Rover:
         self.__is_moving = False
 
         print('Parando')
+
+    def __bridge_h(self):
+        ''' High pin 5 and 6 '''
+        self.labrador.pin7.enable_gpio(k9.Pin.Direction.OUTPUT, alias="P5")
+        self.labrador.pin11.enable_gpio(k9.Pin.Direction.OUTPUT, alias="P6")
+
+        self.labrador.P5.high()
+        self.labrador.P6.high()
