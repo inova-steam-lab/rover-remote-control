@@ -25,7 +25,7 @@ try:
         rover.move_left()
 
     @sio.event
-    def rover_move_right(self):
+    def rover_move_right(data):
         rover.move_right()
 
     @sio.event
