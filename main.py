@@ -13,23 +13,23 @@ try:
     print(f'Conexão estabelecida: {SERVER_URL}')
 
     @sio.event
-    def move_forward(data):
+    def rover_move_forward(data):
         rover.move_forward()
 
     @sio.event
-    def move_backward(data):
+    def rover_move_backward(data):
         rover.move_backward()
 
     @sio.event
-    def move_left(data):
+    def rover_move_left(data):
         rover.move_left()
 
     @sio.event
-    def move_right(self):
+    def rover_move_right(self):
         rover.move_right()
 
     @sio.event
-    def stop(data):
+    def rover_stop(data):
         rover.stop()
 
     # If the application does not have anything to do in the main thread and just wants to wait until the connection with the server ends, it can call the wait() method:
